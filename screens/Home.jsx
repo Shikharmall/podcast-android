@@ -8,14 +8,14 @@ import Navbar from '../partials/Navbar';
 
 //type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 
-const Home = ({ navigation }) => {
+const Home = () => {
   return (
     <View>
       <SafeAreaView style={styles.backgroundStyle}>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <Header />
 
-          {/*<Navbar/> */}
+          {/*<Navbar/>*/}
         </ScrollView>
       </SafeAreaView>
     </View>

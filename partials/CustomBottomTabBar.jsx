@@ -77,3 +77,7 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
 
 export default CustomBottomTabBar;
 
+const styles = StyleSheet.create({
+  
+})
+

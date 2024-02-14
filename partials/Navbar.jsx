@@ -1,22 +1,35 @@
 //import React from 'react'
 
-import { Image, StyleSheet, Text, View } from "react-native";
-import Svg, { Path } from "react-native-svg"
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Svg, {Path} from 'react-native-svg';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Navbar({navigation}) {
+export default function Navbar() {
+
+  const navigation = useNavigation();
+
+  const handleViewProduct = () => {
+    // Navigate to the specific product page, replace 'ProductDetails' with your screen name
+    navigation.navigate('Search', { serachId: 'searchId' });
+  };
+
+
   return (
     <>
-      <View style={[styles.navbar, {
-        flexDirection: 'row',
-      }]}>
-
+      <View
+        style={[
+          styles.navbar,
+          {
+            flexDirection: 'row',
+          },
+        ]}>
         <View style={styles.item}>
           <Svg
             width="20px"
             height="20px"
             viewBox="0 0 15 15"
             fill="none"
-          //xmlns="http://www.w3.org/2000/svg"
+            //xmlns="http://www.w3.org/2000/svg"
           >
             <Path
               d="M7.825.12a.5.5 0 00-.65 0L0 6.27v7.23A1.5 1.5 0 001.5 15h4a.5.5 0 00.5-.5v-3a1.5 1.5 0 013 0v3a.5.5 0 00.5.5h4a1.5 1.5 0 001.5-1.5V6.27L7.825.12z"
@@ -26,19 +39,24 @@ export default function Navbar({navigation}) {
           <Text style={styles.textActive}>Home</Text>
         </View>
 
-        <View style={styles.item}
-         onPress={() => navigation.navigate('Search')}>
-          <Svg
-            width="20px"
-            height="20px"
-            viewBox="0 0 24 24"
-          //xmlns="http://www.w3.org/2000/svg"
-          >
-            <Path d="M21.71 20.29L18 16.61A9 9 0 1016.61 18l3.68 3.68a1 1 0 001.42 0 1 1 0 000-1.39zM11 18a7 7 0 117-7 7 7 0 01-7 7z" 
-            fill="#868c99"/>
-          </Svg>
-          <Text style={styles.text}>Search</Text>
-        </View>
+        <TouchableOpacity onPress={handleViewProduct}>
+          <View
+            style={styles.item}
+            onPress={() => navigation.navigate('Search')}>
+            <Svg
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              //xmlns="http://www.w3.org/2000/svg"
+            >
+              <Path
+                d="M21.71 20.29L18 16.61A9 9 0 1016.61 18l3.68 3.68a1 1 0 001.42 0 1 1 0 000-1.39zM11 18a7 7 0 117-7 7 7 0 01-7 7z"
+                fill="#868c99"
+              />
+            </Svg>
+            <Text style={styles.text}>Search</Text>
+          </View>
+        </TouchableOpacity>
 
         <View style={styles.item}>
           <Svg
@@ -46,7 +64,7 @@ export default function Navbar({navigation}) {
             height="20px"
             viewBox="0 0 24 24"
             fill="none"
-          //xmlns="http://www.w3.org/2000/svg"
+            //xmlns="http://www.w3.org/2000/svg"
           >
             <Path
               d="M9.99 22.75c-.2 0-.36-.04-.48-.09-.4-.15-1.08-.64-1.08-2.19v-6.45H6.09c-1.34 0-1.82-.63-1.99-1-.17-.38-.32-1.15.56-2.16l7.57-8.6c1.02-1.16 1.85-1.08 2.25-.93.4.15 1.08.64 1.08 2.19v6.45h2.34c1.34 0 1.82.63 1.99 1 .17.38.32 1.15-.56 2.16l-7.57 8.6c-.71.81-1.33 1.02-1.77 1.02zm3.94-20.01c-.03.04-.24.14-.57.52l-7.57 8.6c-.28.32-.32.52-.32.56.02.01.2.11.62.11h3.09c.41 0 .75.34.75.75v7.2c0 .5.09.72.13.78.03-.04.24-.14.57-.52l7.57-8.6c.28-.32.32-.52.32-.56-.02-.01-.2-.11-.62-.11h-3.09c-.41 0-.75-.34-.75-.75v-7.2c.01-.5-.09-.71-.13-.78z"
@@ -62,7 +80,7 @@ export default function Navbar({navigation}) {
             height="20px"
             viewBox="0 0 24 24"
             fill="none"
-          //xmlns="http://www.w3.org/2000/svg"
+            //xmlns="http://www.w3.org/2000/svg"
           >
             <Path
               d="M12 2a1 1 0 011 1v10.586l2.293-2.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L11 13.586V3a1 1 0 011-1zM5 17a1 1 0 011 1v2h12v-2a1 1 0 112 0v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2a1 1 0 011-1z"
@@ -77,7 +95,7 @@ export default function Navbar({navigation}) {
             width="20px"
             height="20px"
             viewBox="0 0 24 24"
-          //xmlns="http://www.w3.org/2000/svg"
+            //xmlns="http://www.w3.org/2000/svg"
           >
             <Path
               fillRule="evenodd"
@@ -88,9 +106,8 @@ export default function Navbar({navigation}) {
           <Text style={styles.text}>My Space</Text>
         </View>
       </View>
-      
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -102,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0f1014',
     borderTopWidth: 0.5, // top border width
     //borderTopColor: '#868c99',
-    borderTopColor: 'rgba(134, 140, 153, 0.5)'
+    borderTopColor: 'rgba(134, 140, 153, 0.5)',
     //position: fixed,
     //bottom: 0
   },
@@ -110,12 +127,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    color: 'white'
+    color: 'white',
   },
   text: {
-    color: '#868c99'
+    color: '#868c99',
   },
   textActive: {
-    color: '#e2e6f1'
+    color: '#e2e6f1',
   },
 });
