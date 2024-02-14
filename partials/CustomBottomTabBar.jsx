@@ -65,7 +65,7 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
             }}>
             
             {renderIcon(route, isFocused)}
-            <Text style={{color: isFocused ? '#e2e6f1' : '#868c99'}}>
+            <Text style={{color: isFocused ? '#e2e6f1' : '#868c99', fontWeight: isFocused ? 'bold' : ''}}>
               {label}
             </Text>
           </TouchableOpacity>
@@ -77,29 +77,3 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
 
 export default CustomBottomTabBar;
 
-const styles = StyleSheet.create({
-  navbar: {
-    flex: 1,
-    marginTop: 5,
-    marginBottom: 30,
-    padding: 10,
-    backgroundColor: '#0f1014',
-    borderTopWidth: 0.5, // top border width
-    //borderTopColor: '#868c99',
-    borderTopColor: 'rgba(134, 140, 153, 0.5)',
-    //position: fixed,
-    //bottom: 0
-  },
-  item: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'white',
-  },
-  text: {
-    color: '#868c99',
-  },
-  textActive: {
-    color: '#e2e6f1',
-  },
-});
