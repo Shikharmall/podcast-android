@@ -3,7 +3,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import Svg, { Path } from "react-native-svg"
 
-export default function Navbar() {
+export default function Navbar({navigation}) {
   return (
     <>
       <View style={[styles.navbar, {
@@ -26,7 +26,8 @@ export default function Navbar() {
           <Text style={styles.textActive}>Home</Text>
         </View>
 
-        <View style={styles.item}>
+        <View style={styles.item}
+         onPress={() => navigation.navigate('Search')}>
           <Svg
             width="20px"
             height="20px"
@@ -87,6 +88,7 @@ export default function Navbar() {
           <Text style={styles.text}>My Space</Text>
         </View>
       </View>
+      
     </>
   )
 }
@@ -95,6 +97,7 @@ const styles = StyleSheet.create({
   navbar: {
     flex: 1,
     marginTop: 5,
+    marginBottom: 30,
     padding: 10,
     backgroundColor: '#0f1014',
     borderTopWidth: 0.5, // top border width
