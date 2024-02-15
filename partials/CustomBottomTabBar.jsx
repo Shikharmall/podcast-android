@@ -65,7 +65,7 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
             }}>
             
             {renderIcon(route, isFocused)}
-            <Text style={{color: isFocused ? '#e2e6f1' : '#868c99', fontWeight: isFocused ? 'bold' : ''}}>
+            <Text style={{color: isFocused ? '#e2e6f1' : '#868c99', fontWeight: isFocused ? 'bold' : 'normal',} }>
               {label}
             </Text>
           </TouchableOpacity>
