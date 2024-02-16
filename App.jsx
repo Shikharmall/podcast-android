@@ -88,7 +88,7 @@ function App() {
   //: JSX.Element
   return (
     <>
-      {/*<NavigationContainer>
+      <NavigationContainer>
         <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
           <Tab.Screen
             name="Home"
@@ -126,9 +126,9 @@ function App() {
             }}
           />
         </Tab.Navigator>
-      </NavigationContainer>*/}
+      </NavigationContainer>
       {/*<Login />*/}
-      <OtpCheck />
+      {/*<OtpCheck />*/}
       {/*<UserDetails />*/}
     </>
   );
