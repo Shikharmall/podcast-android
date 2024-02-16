@@ -40,6 +40,9 @@ import New from './screens/New';
 import Download from './screens/Download';
 import MySpace from './screens/MySpace';
 import CustomBottomTabBar from './partials/CustomBottomTabBar';
+import Login from './screens/Login';
+import OtpCheck from './screens/OtpCheck';
+import UserDetails from './screens/UserDetails';
 
 /*
 type SectionProps = PropsWithChildren<{
@@ -84,45 +87,50 @@ const Tab = createBottomTabNavigator();
 function App() {
   //: JSX.Element
   return (
-    <NavigationContainer>
-      <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="Search"
-          component={Search}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="New"
-          component={New}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="Download"
-          component={Download}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Tab.Screen
-          name="MySpace"
-          component={MySpace}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <>
+      {/*<NavigationContainer>
+        <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Search"
+            component={Search}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="New"
+            component={New}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Download"
+            component={Download}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="MySpace"
+            component={MySpace}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>*/}
+      {/*<Login />*/}
+      <OtpCheck />
+      {/*<UserDetails />*/}
+    </>
   );
 }
 

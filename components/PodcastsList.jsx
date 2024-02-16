@@ -1,18 +1,22 @@
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView, TouchableOpacity} from 'react-native';
 import React from 'react';
+//import {useNavigation} from '@react-navigation/native';
 
 export default function PodcastsList({type}) {
+  //const navigation = useNavigation();
+
   return (
     <View>
       <Text style={styles.textHeading}>{type}</Text>
       <ScrollView horizontal={true}>
         <View style={styles.containerBox}>
-          <View style={styles.itemBox}>
+          <TouchableOpacity style={styles.itemBox}>
+            {/* onPress={() => navigation.navigate('PodcastDetails', { item })} */}
             <Image
               source={require('../image/logo1.png')}
               style={styles.image}
             />
-          </View>
+          </TouchableOpacity>
           <View style={styles.itemBox}>
             <Image
               source={require('../image/logo2.png')}
