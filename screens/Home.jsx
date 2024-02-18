@@ -1,32 +1,20 @@
-import { View, Text, Button, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import {View, SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
-import Header from '../partials/Header';
-import Navbar from '../partials/Navbar';
+import Carousel from '../components/Carousel';
+import PodcastsList from '../components/PodcastsList';
 
-//import {NativeStackScreenProps} from "@react-navigation/native-stack";
-//import {RootStackParamList} from '../App';
-
-//type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
-
-const Home = () => {
+export default function Home() {
   return (
-    <View>
-      <SafeAreaView style={styles.backgroundStyle}>
+    <View style={{backgroundColor: '#0f1014', flex: 1}}>
+      <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Header />
-
-          {/*<Navbar/>*/}
+          <Carousel />
+          <PodcastsList/>
+          <PodcastsList/>
+          <PodcastsList/>
+          <PodcastsList/>
         </ScrollView>
       </SafeAreaView>
     </View>
-  )
+  );
 }
-
-export default Home;
-
-
-const styles = StyleSheet.create({
-  backgroundStyle: {
-    backgroundColor: '#0f1014',
-  },
-});
