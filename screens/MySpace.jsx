@@ -4,19 +4,15 @@ import React from 'react';
 export default function MySpace() {
   return (
     <View
-      style={[
-        styles.backgroundStyle,
-        {flex: 1, justifyContent: 'center', alignItems: 'center'},
-      ]}>
+      style={{
+        backgroundColor: '#0f1014',
+        flex: 1,
+      }}>
       <SafeAreaView>
-        <Text style={{color: 'gray'}}>My Space</Text>
+        <View
+          style={{backgroundColor: 'gray', height: 150, width: '100%'}}></View>
+        
       </SafeAreaView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  backgroundStyle: {
-    backgroundColor: '#0f1014',
-  },
-});
