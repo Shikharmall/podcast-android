@@ -161,6 +161,7 @@ export default function Carousel() {
                   flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
+                  paddingHorizontal: 70
                 }}>
                 <Svg
                   fill={'white'}
