@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function Carousel() {
   const flatListRef = useRef();
@@ -36,9 +37,23 @@ export default function Carousel() {
 
   const renderItemFunc = ({item, index}) => {
     return (
-      <>
+      <View>
         <Image source={item.image} style={{height: 300, width: screenWidth}} />
-      </>
+
+        <LinearGradient
+          //colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,1)']}
+          //colors={['rgba(15, 16, 20, 0)', 'rgba(15, 16, 20, 0.5)', 'rgba(15, 16, 20, 1)']}
+          //colors={['rgba(15,16,20,1)', 'rgba(15,16,20,1)', 'rgba(15,16,20,1)']}
+          colors={['rgba(0, 0, 0, 0.1)', '#0f1014', '#0f1014']}
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            height: 100, // Adjust the height of the fading effect as needed
+          }}
+        />
+      </View>
     );
   };
 
@@ -83,6 +98,8 @@ export default function Carousel() {
           horizontal={true}
           pagingEnabled={true}
           onScroll={handleScroll}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
         />
         <View
           style={{
