@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import PodcastsList from '../components/PodcastsList'
+import PodcastsList from '../components/PodcastsListOld'
 import MainHeader from '../components/MainHeader'
 
 export default function Header() {

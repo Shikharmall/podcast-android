@@ -1,7 +1,8 @@
 import {View, SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
 import Carousel from '../components/Carousel';
-import PodcastsList from '../components/PodcastsList';
+import PodcastsList from '../components/PodcastsListOld';
+import PodcastCategories from '../components/PodcastCategories';
 
 export default function Home() {
   return (
@@ -9,10 +10,7 @@ export default function Home() {
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <Carousel />
-          <PodcastsList/>
-          <PodcastsList/>
-          <PodcastsList/>
-          <PodcastsList/>
+          <PodcastCategories />
         </ScrollView>
       </SafeAreaView>
     </View>

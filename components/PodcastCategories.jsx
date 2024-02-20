@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 
-export default function PodcastsList() {
+export default function PodcastCategories() {
   const podcastsData = [
     {
       id: 1,

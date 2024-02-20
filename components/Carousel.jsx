@@ -1,5 +1,14 @@
-import {View, Text, FlatList, Image, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  Dimensions,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
+import {Path, Svg} from 'react-native-svg';
 
 export default function Carousel() {
   const flatListRef = useRef();
@@ -27,7 +36,9 @@ export default function Carousel() {
 
   const renderItemFunc = ({item, index}) => {
     return (
-      <Image source={item.image} style={{height: 300, width: screenWidth}} />
+      <>
+        <Image source={item.image} style={{height: 300, width: screenWidth}} />
+      </>
     );
   };
 
@@ -82,7 +93,7 @@ export default function Carousel() {
           }}>
           <Image
             source={require('../image/thesaruslogo.jpg')}
-            style={{height: 50, width: 50, borderRadius: 5}}
+            style={{height: 40, width: 40, borderRadius: 5}}
           />
         </View>
         <View
@@ -93,12 +104,61 @@ export default function Carousel() {
             width: '100%',
             //backgroundColor: 'red',
             flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
           }}>
-          <View>
-            <Image
-              source={require('../image/thesaruslogo.jpg')}
-              style={{height: 50, width: 50, borderRadius: 5}}
-            />
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <View
+              style={{
+                height: 50,
+                width: 50,
+              }}>
+              <Image
+                source={require('../image/title.png')}
+                style={{width: '100%', height: '100%'}}
+              />
+            </View>
+            <Text
+              style={{
+                color: '#e2e6f1',
+                fontSize: 18,
+                fontWeight: 'bold',
+                margin: 10,
+              }}>
+              2024 &#x2022; Hindi &#x2022; Drama &#x2022; Action &#x2022; Comedy
+            </Text>
+            <TouchableOpacity
+            //style={{position: 'absolute', bottom: 20, right: 20}}
+            //onPress={handleButtonClick}
+            >
+              <View
+                style={{
+                  padding: 10,
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: 5,
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Svg
+                  fill={'white'}
+                  width="20px"
+                  height="20px"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <Path d="M5.008 12.897a.644.644 0 01-.91-.227.719.719 0 01-.098-.364V3.693C4 3.31 4.296 3 4.662 3a.64.64 0 01.346.103l6.677 4.306a.713.713 0 010 1.182l-6.677 4.306z" />
+                </Svg>
+                <Text
+                  style={{color: 'white', fontWeight: 'bold', fontSize: 16}}>
+                  Watch Now
+                </Text>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
