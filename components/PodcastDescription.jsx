@@ -8,18 +8,25 @@ export class PodcastDescription extends Component {
       <View style={{flex: 1}}>
         <View
           style={{
+            backgroundColor: 'red',
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Image
-            source={require('../image/title.png')}
-            style={{
-              height: 70,
-              width: 120,
-            }}
-          />
+          <View style={{width: 120, backgroundColor: 'green', height: 70}}>
+            <Image
+              source={require('../image/title.png')}
+              style={{
+                //height: 200,
+                //width: 200,
+                width: '100%',
+                height: '100%',
+                resizeMode: 'contain', // Add this line to handle the image size
+              }}
+            />
+          </View>
         </View>
+
         <View
           style={{
             flexDirection: 'row',
@@ -30,11 +37,22 @@ export class PodcastDescription extends Component {
             style={{
               //color: '#e2e6f1',
               color: 'gray',
-              fontSize: 15,
+              fontSize: 14,
               fontWeight: 'bold',
               margin: 10,
             }}>
-            2024 &#x2022; 1 Seasons &#x2022; 3 languages &#x2022; U/A 18+
+            2024 &#x2022; 1 Seasons &#x2022; 3 languages &#x2022;{' '}
+            <Text
+              style={
+                {
+                  //backgroundColor: 'rgba(128, 128, 128, 0.5)',
+                  //paddingHorizontal: 15,
+                  //color: 'white',
+                  //borderRadius: 20
+                }
+              }>
+              U/A 18+
+            </Text>
           </Text>
         </View>
 
@@ -73,7 +91,7 @@ export class PodcastDescription extends Component {
 
         {/* genres */}
 
-        <View>
+        <View style={{alignItems: 'center'}}>
           <ScrollView
             horizontal
             contentInsetAdjustmentBehavior="automatic"
@@ -87,13 +105,11 @@ export class PodcastDescription extends Component {
                 fontWeight: 'bold',
                 margin: 10,
               }}>
-              <Text style={{color: 'white', padding: 20}}>Drama</Text> {' '}|{' '}{' '}
-              <Text style={{color: 'white'}}>Comedy</Text> {' '}|{' '}{' '}
-              <Text style={{color: 'white'}}>Thriller</Text> {' '}|{' '}{' '}
-              <Text style={{color: 'white'}}>Drama</Text> {' '}|{' '}{' '}
-              <Text style={{color: 'white'}}>Drama</Text> {' '}|{' '}{' '}
-              <Text style={{color: 'white'}}>Voilence</Text> {' '}|{' '}{' '}
-              <Text style={{color: 'white'}}>Drama</Text>
+              <Text style={{color: 'white'}}>Drama</Text> |{' '}
+              <Text style={{color: 'white'}}>Comedy</Text> |{' '}
+              <Text style={{color: 'white'}}>Thriller</Text> |{' '}
+              <Text style={{color: 'white'}}>Crime</Text> |{' '}
+              <Text style={{color: 'white'}}>Violence</Text>
             </Text>
           </ScrollView>
         </View>
