@@ -67,8 +67,9 @@ export default function PodcastCategories() {
         <Text
           style={{
             color: '#ffffff',
-            fontSize: 20,
+            fontSize: 16,
             margin: 5,
+            fontWeight: 'bold'
           }}>
           {section.title}
         </Text>

@@ -143,11 +143,14 @@ export default function Carousel() {
             <Text
               style={{
                 color: '#e2e6f1',
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: 'bold',
                 margin: 10,
               }}>
-              2024 &#x2022; Hindi &#x2022; Drama &#x2022; Action &#x2022; Comedy
+              2024 <Text style={{color: 'white'}}>&#x2022;</Text> Hindi{' '}
+              <Text style={{color: 'white'}}>&#x2022;</Text> Drama{' '}
+              <Text style={{color: 'white'}}>&#x2022;</Text> Action{' '}
+              <Text style={{color: 'white'}}>&#x2022;</Text> Comedy
             </Text>
             <TouchableOpacity
             //style={{position: 'absolute', bottom: 20, right: 20}}
@@ -161,7 +164,7 @@ export default function Carousel() {
                   flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  paddingHorizontal: 70
+                  paddingHorizontal: 70,
                 }}>
                 <Svg
                   fill={'white'}

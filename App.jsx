@@ -44,6 +44,7 @@ import Login from './screens/Login';
 import OtpCheck from './screens/OtpCheck';
 import UserDetails from './screens/UserDetails';
 import PodcastDetails from './screens/PodcastDetails';
+import VideoStreaming from './screens/VideoStreaming';
 
 /*
 type SectionProps = PropsWithChildren<{
@@ -89,7 +90,7 @@ function App() {
   //: JSX.Element
   return (
     <>
-      {/*<NavigationContainer>
+      <NavigationContainer>
         <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
           <Tab.Screen
             name="Home"
@@ -127,12 +128,14 @@ function App() {
             }}
           />
         </Tab.Navigator>
-          </NavigationContainer>*/}
+      </NavigationContainer>
+
       {/*<Login />*/}
       {/*<OtpCheck />*/}
       {/*<UserDetails />*/}
 
-      <PodcastDetails />
+      {/*<PodcastDetails />*/}
+      {/*<VideoStreaming />*/}
     </>
   );
 }
