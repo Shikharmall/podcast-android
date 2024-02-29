@@ -8,12 +8,11 @@ export class PodcastDescription extends Component {
       <View style={{flex: 1}}>
         <View
           style={{
-            backgroundColor: 'red',
             flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <View style={{width: 120, backgroundColor: 'green', height: 70}}>
+          <View style={{width: 120, height: 70}}>
             <Image
               source={require('../image/title.png')}
               style={{
