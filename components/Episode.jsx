@@ -31,8 +31,8 @@ const Episode = () => {
           style={{
             //color: '#e2e6f1',
             color: 'white',
-            fontSize: 18,
-            fontWeight: 'bold',
+            fontSize: 14,
+            fontWeight: 'normal',
             margin: 10,
             marginVertical: 0,
           }}>
@@ -42,7 +42,7 @@ const Episode = () => {
           style={{
             //color: '#e2e6f1',
             color: 'gray',
-            fontSize: 15,
+            fontSize: 13,
             fontWeight: 'bold',
             margin: 10,
           }}>

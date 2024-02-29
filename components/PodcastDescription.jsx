@@ -37,6 +37,9 @@ export class PodcastDescription extends Component {
             2024 &#x2022; 1 Seasons &#x2022; 3 languages &#x2022; U/A 18+
           </Text>
         </View>
+
+        {/* watch button */}
+
         <TouchableOpacity
         //style={{position: 'absolute', bottom: 20, right: 20}}
         //onPress={handleButtonClick}
@@ -46,7 +49,7 @@ export class PodcastDescription extends Component {
               padding: 10,
               //backgroundColor: 'white',
               backgroundColor: '#dedcdc',
-              borderRadius: 5,
+              borderRadius: 10,
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
@@ -62,11 +65,14 @@ export class PodcastDescription extends Component {
               xmlns="http://www.w3.org/2000/svg">
               <Path d="M5.008 12.897a.644.644 0 01-.91-.227.719.719 0 01-.098-.364V3.693C4 3.31 4.296 3 4.662 3a.64.64 0 01.346.103l6.677 4.306a.713.713 0 010 1.182l-6.677 4.306z" />
             </Svg>
-            <Text style={{color: 'black', fontWeight: 'bold', fontSize: 18}}>
+            <Text style={{color: '#121212', fontWeight: '500', fontSize: 16}}>
               Watch Latest Season
             </Text>
           </View>
         </TouchableOpacity>
+
+        {/* genres */}
+
         <View>
           <ScrollView
             horizontal
@@ -77,7 +83,7 @@ export class PodcastDescription extends Component {
               style={{
                 //color: '#e2e6f1',
                 color: 'gray',
-                fontSize: 15,
+                fontSize: 12,
                 fontWeight: 'bold',
                 margin: 10,
               }}>
@@ -91,13 +97,16 @@ export class PodcastDescription extends Component {
             </Text>
           </ScrollView>
         </View>
+
+        {/* description */}
+
         <View>
           <Text
             style={{
               //color: '#e2e6f1',
               color: 'gray',
-              fontSize: 16,
-              fontWeight: 'bold',
+              fontSize: 13,
+              fontWeight: '500',
               margin: 10,
               marginVertical: 0,
             }}>
@@ -105,6 +114,8 @@ export class PodcastDescription extends Component {
             set to end it all. Will she succeded?
           </Text>
         </View>
+
+        {/* features */}
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View
             style={{

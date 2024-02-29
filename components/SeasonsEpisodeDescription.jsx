@@ -14,12 +14,12 @@ const SeasonsEpisodeDescription = () => {
           borderBottomColor: 'rgba(128, 128, 128, 0.5)',
         }}>
         <View style={{padding: 10}}>
-          <Text style={{color: 'gray', fontSize: 18, fontWeight: 'semibold'}}>
+          <Text style={{color: 'gray', fontSize: 14, fontWeight: 'bold'}}>
             Season 1
           </Text>
         </View>
         <View style={{padding: 10}}>
-          <Text style={{color: 'gray', fontSize: 18, fontWeight: 'semibold'}}>
+          <Text style={{color: 'gray', fontSize: 14, fontWeight: 'bold'}}>
             Season 2
           </Text>
         </View>
@@ -29,7 +29,7 @@ const SeasonsEpisodeDescription = () => {
             borderBottomWidth: 1,
             borderBottomColor: 'white',
           }}>
-          <Text style={{color: 'white', fontSize: 18, fontWeight: 'semibold'}}>
+          <Text style={{color: 'white', fontSize: 14, fontWeight: 'bold'}}>
             Season 3
           </Text>
         </View>
