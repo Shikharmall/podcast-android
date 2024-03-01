@@ -1,4 +1,4 @@
-import {View, SafeAreaView, ScrollView} from 'react-native';
+import {View, SafeAreaView, ScrollView, StatusBar} from 'react-native';
 import React from 'react';
 import Carousel from '../components/Carousel';
 import PodcastCategories from '../components/PodcastCategories';
@@ -43,6 +43,11 @@ export default function Home() {
     },
   ];
   return (
+    <>
+    <StatusBar
+        backgroundColor="#0f1014" // Set your desired color here
+        //barStyle="light-content" // Set the text color of the status bar
+      />
     <View style={{backgroundColor: '#0f1014', flex: 1}}>
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
@@ -54,5 +59,6 @@ export default function Home() {
         </ScrollView>
       </SafeAreaView>
     </View>
+    </>
   );
 }
