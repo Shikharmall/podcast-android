@@ -110,7 +110,11 @@ export default function Carousel() {
           }}>
           <Image
             source={require('../image/thesaruslogo.jpg')}
-            style={{height: 40, width: 40, borderRadius: 5}}
+            style={{
+              height: 40,
+              width: 40,
+              borderRadius: 5,
+            }}
           />
         </View>
         <View
@@ -132,12 +136,12 @@ export default function Carousel() {
             }}>
             <View
               style={{
-                height: 50,
-                width: 50,
+                height: 60,
+                width: 80,
               }}>
               <Image
                 source={require('../image/title.png')}
-                style={{width: '100%', height: '100%'}}
+                style={{width: '100%', height: '100%', resizeMode: 'contain'}}
               />
             </View>
             <Text

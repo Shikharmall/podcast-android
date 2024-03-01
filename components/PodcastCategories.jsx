@@ -8,60 +8,28 @@ import {
   FlatList,
 } from 'react-native';
 
-export default function PodcastCategories() {
-  const podcastsData = [
-    {
-      id: 1,
-      title: 'Recent Podcasts',
-      data: [
-        {id: 1, name: 'abc1', image: require('../image/logo1.png')},
-        {id: 2, name: 'abc2', image: require('../image/logo2.png')},
-        {id: 3, name: 'abc3', image: require('../image/logo3.png')},
-        {id: 4, name: 'abc4', image: require('../image/logo4.png')},
-        {id: 5, name: 'abc5', image: require('../image/logo5.png')},
-        {id: 6, name: 'abc6', image: require('../image/logo6.png')},
-      ],
-    },
-    {
-      id: 2,
-      title: 'Famous Podcasts',
-      data: [
-        {id: 1, name: 'abc5', image: require('../image/logo5.png')},
-        {id: 2, name: 'abc6', image: require('../image/logo6.png')},
-        {id: 3, name: 'abc3', image: require('../image/logo3.png')},
-        {id: 4, name: 'abc1', image: require('../image/logo1.png')},
-        {id: 5, name: 'abc4', image: require('../image/logo4.png')},
-        {id: 6, name: 'abc2', image: require('../image/logo2.png')},
-      ],
-    },
-    {
-      id: 3,
-      title: 'Old Podcasts',
-      data: [
-        {id: 1, name: 'abc4', image: require('../image/logo4.png')},
-        {id: 2, name: 'abc2', image: require('../image/logo2.png')},
-        {id: 3, name: 'abc6', image: require('../image/logo6.png')},
-        {id: 4, name: 'abc1', image: require('../image/logo1.png')},
-        {id: 5, name: 'abc3', image: require('../image/logo3.png')},
-        {id: 6, name: 'abc5', image: require('../image/logo5.png')},
-      ],
-    },
-  ];
-
-  const renderItemFunc1 = ({item}) => {
+export default function PodcastCategories({title, item}) {
+  /*const renderItemFunc1 = ({item}) => {
     return null;
-  };
+  };*/
 
   const renderItemFunc = ({item}) => {
     return (
       <Image
         source={item.image}
-        style={{width: 130, height: 160, borderRadius: 5, margin: 5}}
+        style={{
+          width: 130,
+          height: 160,
+          margin: 5,
+          resizeMode: 'cover',
+          borderRadius: 5,
+          backgroundColor: 'blue',
+        }}
       />
     );
   };
 
-  const renderHeaderFunc = ({section}) => {
+  /*const renderHeaderFunc = ({section}) => {
     return (
       <View>
         <Text
@@ -69,7 +37,7 @@ export default function PodcastCategories() {
             color: '#ffffff',
             fontSize: 16,
             margin: 5,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
           }}>
           {section.title}
         </Text>
@@ -81,7 +49,7 @@ export default function PodcastCategories() {
         />
       </View>
     );
-  };
+  };*/
 
   /*const renderSection = ({section}) => (
     <ScrollView horizontal={true}>
@@ -98,12 +66,29 @@ export default function PodcastCategories() {
 
   return (
     <View style={{flex: 1}}>
-      <SectionList
+      {/*<SectionList
         keyExtractor={item => item.id.toString()}
         sections={podcastsData}
         renderItem={({item}) => null}
         renderSectionHeader={renderHeaderFunc}
         //renderSection={renderSection}
+      />*/}
+      <Text
+        style={{
+          color: '#ffffff',
+          fontSize: 16,
+          margin: 5,
+          fontWeight: 'bold',
+        }}>
+        {item.title}
+      </Text>
+      <FlatList
+        data={item.data}
+        horizontal={true}
+        renderItem={renderItemFunc}
+        keyExtractor={item => item.id.toString()}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
