@@ -1,10 +1,8 @@
 import {View, Text, Image, Dimensions} from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
 const screenWidth = Dimensions.get('window').width;
-//import Video from 'react-native-video';
-
-//import VideoPlayer from 'react-native-video-player';
+import Video from 'react-native-video';
 
 const TrailorVideo = () => {
   /*const [clicked, setClicked] = useState(false);
@@ -19,17 +17,79 @@ const TrailorVideo = () => {
     let secs = (Math.trunc(seconds) % 60).toString().padStart(2, '0');
     return `${mins}:${secs}`;
   };*/
+  const [startVideo, setStartVideo] = useState(false);
+  const [isMute, seIsMute] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStartVideo(true);
+    }, 3000);
+  }, []);
+
   return (
     <View style={{position: 'relative'}}>
-      <Image
-        source={require('../image/mainLogo1.png')}
-        style={{
-          height: 250,
-          width: screenWidth - 20,
-          margin: 10,
-          borderRadius: 20,
-        }}
-      />
+      {startVideo ? (
+        <>
+          <Video
+            source={{
+              uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+            }}
+            resizeMode="cover" // You can change this to 'cover' or 'stretch'
+            style={{
+              height: 250,
+              width: screenWidth - 20,
+              margin: 10,
+              borderRadius: 20,
+            }}
+            //rate={1.0}
+            //volume={1.0}
+            //muted={false}
+            //paused={false}
+            //resizeMode="contain"
+            //repeat={false}
+            //fullscreen={false}
+            //onLoad={(data) => console.log('Video is loaded')}
+            //onError={(error) => console.log('Error occurred: ', error)}
+            //onProgress={(data) => console.log('Video progress: ', data)}
+            //controls={true} // You can add controls if needed
+          />
+          {isMute ? (
+            <Svg
+              style={{position: 'absolute', bottom: 20, right: 20}}
+              width="30px"
+              height="30px"
+              viewBox="0 0 16 16"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg">
+              <Path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M1.5 5h2.79l3.86-3.83.85.35v13l-.85.33L4.29 11H1.5l-.5-.5v-5l.5-.5zm3.35 5.17L8 13.31V2.73L4.85 5.85 4.5 6H2v4h2.5l.35.17zm9.381-4.108l.707.707L13.207 8.5l1.731 1.732-.707.707L12.5 9.207l-1.732 1.732-.707-.707L11.793 8.5 10.06 6.77l.707-.707 1.733 1.73 1.731-1.731z"
+              />
+            </Svg>
+          ) : (
+            <Svg
+              style={{position: 'absolute', bottom: 20, right: 20}}
+              width="30px"
+              height="30px"
+              viewBox="0 0 24 24"
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg">
+              <Path d="M12.43 4.1a1 1 0 00-1 .12L6.65 8H3a1 1 0 00-1 1v6a1 1 0 001 1h3.65l4.73 3.78A1 1 0 0012 20a.91.91 0 00.43-.1A1 1 0 0013 19V5a1 1 0 00-.57-.9zM11 16.92l-3.38-2.7A1 1 0 007 14H4v-4h3a1 1 0 00.62-.22L11 7.08zm8.66-10.58a1 1 0 00-1.42 1.42 6 6 0 01-.38 8.84 1 1 0 00.64 1.76 1 1 0 00.64-.23 8 8 0 00.52-11.79zm-2.83 2.83a1 1 0 10-1.42 1.42A2 2 0 0116 12a2 2 0 01-.71 1.53 1 1 0 00-.13 1.41 1 1 0 001.41.12A4 4 0 0018 12a4.06 4.06 0 00-1.17-2.83z" />
+            </Svg>
+          )}
+        </>
+      ) : (
+        <Image
+          source={require('../image/mainLogo1.png')}
+          style={{
+            height: 250,
+            width: screenWidth - 20,
+            margin: 10,
+            borderRadius: 20,
+          }}
+        />
+      )}
       <Svg
         style={{position: 'absolute', top: 20, right: 20}}
         width="30px"
@@ -40,6 +100,7 @@ const TrailorVideo = () => {
         className="cf-icon-svg">
         <Path d="M11.383 13.644A1.03 1.03 0 019.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 11-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 111.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 011.455 1.456L7.455 9.716z" />
       </Svg>
+
       {/*<Video />*/}
 
       {/*<Video
