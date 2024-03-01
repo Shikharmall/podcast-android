@@ -134,8 +134,8 @@ function App() {
       {/*<OtpCheck />*/}
       {/*<UserDetails />*/}
 
-      <PodcastDetails />
-      {/*<VideoStreaming />*/}
+      {/*<PodcastDetails />*/}
+      <VideoStreaming />
     </>
   );
 }
