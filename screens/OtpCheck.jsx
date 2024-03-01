@@ -21,6 +21,7 @@ export default function OtpCheck() {
           <TextInput
             placeholder="0"
             placeholderTextColor="gray"
+            keyboardType='numeric'
             style={{
               padding: 10,
               marginLeft: 15,
@@ -40,6 +41,7 @@ export default function OtpCheck() {
             //keyboardType='number'
             placeholder="0"
             placeholderTextColor="gray"
+            keyboardType='numeric'
             style={{
               padding: 10,
               margin: 5,
@@ -57,6 +59,7 @@ export default function OtpCheck() {
           <TextInput
             placeholder="0"
             placeholderTextColor="gray"
+            keyboardType='numeric'
             style={{
               padding: 10,
               margin: 5,
@@ -74,6 +77,7 @@ export default function OtpCheck() {
           <TextInput
             placeholder="0"
             placeholderTextColor="gray"
+            keyboardType='numeric'
             style={{
               padding: 10,
               marginRight: 15,

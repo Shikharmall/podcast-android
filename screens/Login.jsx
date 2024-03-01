@@ -30,6 +30,7 @@ export default function Login() {
             borderWidth: 2, // Border width
             borderColor: 'gray', // Border color
           }}
+          keyboardType="numeric"
         />
         <Text
           style={{
