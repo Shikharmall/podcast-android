@@ -5,12 +5,18 @@ import {
   SafeAreaView,
   Dimensions,
   Image,
+  TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
 
 export default function MySpace() {
   const screenWidth = Dimensions.get('window').width;
+  const [isShow, setIsShow] = useState(false);
+  const togglePopUp = () => {
+    setIsShow(!isShow);
+  };
+  console.log(isShow);
   return (
     <View
       style={{
@@ -18,6 +24,7 @@ export default function MySpace() {
         flex: 1,
       }}>
       <SafeAreaView>
+        {/* header */}
         <View style={{position: 'relative'}}>
           <View
             style={{
@@ -41,7 +48,41 @@ export default function MySpace() {
               style={{width: '100%', height: '100%'}}
             />
           </View>
+
+          <TouchableOpacity
+            onPress={togglePopUp}
+            style={{
+              //backgroundColor: '#0f1014',
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              padding: 7,
+            }}>
+            <Svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              fill="#ffffff"
+              viewBox="0 0 52 52">
+              <Path d="M20 44c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6zm0-18c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6zm0-18c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" />
+            </Svg>
+          </TouchableOpacity>
+
+          {isShow ? (
+            <View
+              style={{
+                backgroundColor: '#0f1014',
+                position: 'absolute',
+                top: 30,
+                right: 15,
+                padding: 7,
+                width: 200,
+                height: 100,
+                borderRadius: 10,
+              }}></View>
+          ) : null}
         </View>
+
         <View
           style={{
             //backgroundColor: 'red',
@@ -63,6 +104,7 @@ export default function MySpace() {
             Edit profile
           </Text>
         </View>
+
         <View style={{paddingHorizontal: 10}}>
           <Text style={{color: 'white', fontSize: 20}}>Shikhar Mall</Text>
           <Text style={{color: 'gray', fontSize: 16}}>@shikharrr24</Text>
@@ -90,9 +132,10 @@ export default function MySpace() {
             </Text>
           </View>
 
-          
-          <Text style={{color: 'gray', fontSize: 16}}> <Text style={{color: 'white'}}>24</Text> Followers</Text>
-          
+          <Text style={{color: 'gray', fontSize: 16}}>
+            {' '}
+            <Text style={{color: 'white'}}>24</Text> Followers
+          </Text>
         </View>
       </SafeAreaView>
     </View>
