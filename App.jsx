@@ -123,6 +123,7 @@ function App() {
           <Tab.Screen
             name="MySpace"
             component={MySpace}
+            activeOpacity={1}
             options={{
               headerShown: false,
             }}

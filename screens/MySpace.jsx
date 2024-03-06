@@ -12,18 +12,23 @@ import {Path, Svg} from 'react-native-svg';
 
 export default function MySpace() {
   const screenWidth = Dimensions.get('window').width;
+  const screenHeight = Dimensions.get('window').height;
+
   const [isShow, setIsShow] = useState(false);
   const togglePopUp = () => {
     setIsShow(!isShow);
   };
-  console.log(isShow);
+  //console.log(isShow);
   return (
     <View
       style={{
         backgroundColor: '#0f1014',
         flex: 1,
       }}>
-      <SafeAreaView>
+      <SafeAreaView
+        style={{
+          position: 'relative',
+        }}>
         {/* header */}
         <View style={{position: 'relative'}}>
           <View
@@ -51,6 +56,7 @@ export default function MySpace() {
 
           <TouchableOpacity
             onPress={togglePopUp}
+            activeOpacity={1}
             style={{
               //backgroundColor: '#0f1014',
               position: 'absolute',
@@ -103,6 +109,32 @@ export default function MySpace() {
             }}>
             Edit profile
           </Text>
+          <Text
+            style={{
+              padding: 3,
+              paddingHorizontal: 15,
+              //backgroundColor: 'pink',
+              borderRadius: 20,
+              color: 'white',
+              borderWidth: 1,
+              borderColor: 'gray',
+              fontWeight: 500,
+            }}>
+            Follow
+          </Text>
+          <Text
+            style={{
+              padding: 3,
+              paddingHorizontal: 15,
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              borderRadius: 20,
+              color: 'white',
+              borderWidth: 1,
+              borderColor: 'gray',
+              fontWeight: 500,
+            }}>
+            Unfollow
+          </Text>
         </View>
 
         <View style={{paddingHorizontal: 10}}>
@@ -137,6 +169,25 @@ export default function MySpace() {
             <Text style={{color: 'white'}}>24</Text> Followers
           </Text>
         </View>
+
+        {/*<View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: screenWidth,
+            backgroundColor: 'rgba(0,0,0,0.2)',
+            height: screenHeight,
+            opacity: 0.6,
+            flex: 1,
+            justifyContent: 'center',
+            alignContent: 'center'
+          }}>
+          <Image
+            source={require('../image/logo1.png')}
+            style={{width: screenWidth, height: 500}}
+          />
+        </View>*/}
       </SafeAreaView>
     </View>
   );

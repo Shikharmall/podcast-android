@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   FlatList,
+  TouchableOpacity,
 } from 'react-native';
 
 export default function PodcastCategories({title, item}) {
@@ -13,19 +14,28 @@ export default function PodcastCategories({title, item}) {
     return null;
   };*/
 
+  const openPodcast = () =>{
+    
+  }
+
   const renderItemFunc = ({item}) => {
     return (
-      <Image
-        source={item.image}
-        style={{
-          width: 130,
-          height: 160,
-          margin: 5,
-          resizeMode: 'cover',
-          borderRadius: 5,
-          backgroundColor: 'blue',
-        }}
-      />
+      <TouchableOpacity
+       activeOpacity={1}
+       onPress={openPodcast}
+      >
+        <Image
+          source={item.image}
+          style={{
+            width: 130,
+            height: 160,
+            margin: 5,
+            resizeMode: 'cover',
+            borderRadius: 5,
+            backgroundColor: 'blue',
+          }}
+        />
+      </TouchableOpacity>
     );
   };
 

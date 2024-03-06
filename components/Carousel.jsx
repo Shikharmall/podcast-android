@@ -157,9 +157,9 @@ export default function Carousel() {
               <Text style={{color: 'white'}}>&#x2022;</Text> Comedy
             </Text>
             <TouchableOpacity
-            //style={{position: 'absolute', bottom: 20, right: 20}}
-            //onPress={handleButtonClick}
-            >
+              //style={{position: 'absolute', bottom: 20, right: 20}}
+              //onPress={handleButtonClick}
+              activeOpacity={1}>
               <View
                 style={{
                   padding: 10,

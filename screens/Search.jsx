@@ -5,6 +5,7 @@ import {
   TextInput,
   ScrollView,
   SafeAreaView,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import SearchResults from '../components/SearchResults';
@@ -12,6 +13,7 @@ import {Path, Svg} from 'react-native-svg';
 
 export default function Search() {
   const [searchText, setSearchText] = useState('');
+  const [showCross, setShowCross] = useState(false);
 
   return (
     <View
@@ -26,10 +28,18 @@ export default function Search() {
               placeholder="Podcasts , channels and more"
               value={searchText}
               placeholderTextColor="gray"
-              onChangeText={text => setSearchText(text)}
+              onChangeText={text => {
+                setSearchText(text);
+                if (text === '') {
+                  setShowCross(false);
+                } else {
+                  setShowCross(true);
+                }
+              }}
               style={{
                 padding: 10,
-                paddingLeft: 40,
+                paddingLeft: 44,
+                paddingRight: 44,
                 margin: 5,
                 marginHorizontal: 15,
                 marginBottom: 10,
@@ -44,7 +54,7 @@ export default function Search() {
             <Svg
               width="25px"
               height="25px"
-              style={{position: 'absolute', top: 20, left: 20}}
+              style={{position: 'absolute', top: 20, left: 24}}
               viewBox="0 0 24 24"
               //xmlns="http://www.w3.org/2000/svg"
             >
@@ -53,6 +63,27 @@ export default function Search() {
                 fill={'white'}
               />
             </Svg>
+            {showCross ? (
+              <TouchableOpacity
+                onPress={() => {
+                  setSearchText('');
+                  setShowCross(false);
+                }}
+                style={{position: 'absolute', top: 20, right: 24}}>
+                <Svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#ffffff"
+                  stroke="#ffffff"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}>
+                  <Path d="M11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5" fill={'white'} />
+                </Svg>
+              </TouchableOpacity>
+            ) : null}
           </View>
 
           <View>
