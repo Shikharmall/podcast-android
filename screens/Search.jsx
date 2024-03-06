@@ -10,6 +10,7 @@ import {
 import React, {useState} from 'react';
 import SearchResults from '../components/SearchResults';
 import {Path, Svg} from 'react-native-svg';
+import SearchResultsRev from '../components/SearchResultsRev';
 
 export default function Search() {
   const [searchText, setSearchText] = useState('');
@@ -23,6 +24,7 @@ export default function Search() {
       }}>
       <SafeAreaView>
         <ScrollView contentInsetAdjustmentBehavior="automatic">
+          {/* search input */}
           <View style={{position: 'relative'}}>
             <TextInput
               placeholder="Podcasts , channels and more"
@@ -86,6 +88,8 @@ export default function Search() {
             ) : null}
           </View>
 
+          {/* heading */}
+
           <View>
             <Text
               style={{
@@ -99,11 +103,7 @@ export default function Search() {
           </View>
 
           <SearchResults />
-          <SearchResults />
-
-          {/*<View>
-        <Text style={styles.textHeading}>People Search For</Text>
-      </View>*/}
+          <SearchResultsRev />
         </ScrollView>
       </SafeAreaView>
     </View>

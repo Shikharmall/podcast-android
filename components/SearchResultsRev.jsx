@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-export default function SearchResults() {
+export default function SearchResultsRev() {
   return (
     <View
       style={{
@@ -16,26 +16,6 @@ export default function SearchResults() {
         flexDirection: 'row',
         //marginHorizontal: 2,
       }}>
-      <View
-        style={{
-          width: 265,
-          height: 350,
-          backgroundColor: 'gray',
-
-          marginLeft: 10,
-          marginRight: 2,
-
-          marginTop: 2,
-          marginBottom: 2,
-
-          borderRadius: 5,
-          overflow: 'hidden',
-        }}>
-        <Image
-          source={require('../image/logo2.png')}
-          style={{width: '100%', height: '100%', resizeMode: 'cover'}}
-        />
-      </View>
       <View style={{flex: 1, flexDirection: 'column'}}>
         <View
           style={{
@@ -46,14 +26,14 @@ export default function SearchResults() {
             marginTop: 2,
             marginBottom: 2,
 
-            marginLeft: 2,
-            marginRight: 10,
+            marginLeft: 10,
+            marginRight: 2,
 
             borderRadius: 5,
             overflow: 'hidden',
           }}>
           <Image
-            source={require('../image/logo1.png')}
+            source={require('../image/logo4.png')}
             style={{width: '100%', height: '100%', resizeMode: 'cover'}}
           />
         </View>
@@ -62,20 +42,41 @@ export default function SearchResults() {
             width: 120,
             height: 148 + 25,
             backgroundColor: 'gray',
+
             marginTop: 2,
             marginBottom: 2,
 
-            marginLeft: 2,
-            marginRight: 10,
+            marginLeft: 10,
+            marginRight: 2,
 
             borderRadius: 5,
             overflow: 'hidden',
           }}>
           <Image
-            source={require('../image/logo3.png')}
+            source={require('../image/logo6.png')}
             style={{width: '100%', height: '100%', resizeMode: 'cover'}}
           />
         </View>
+      </View>
+      <View
+        style={{
+          width: 265,
+          height: 350,
+          backgroundColor: 'gray',
+
+          marginLeft: 2,
+          marginRight: 10,
+
+          marginTop: 2,
+          marginBottom: 2,
+
+          borderRadius: 5,
+          overflow: 'hidden',
+        }}>
+        <Image
+          source={require('../image/logo5.png')}
+          style={{width: '100%', height: '100%', resizeMode: 'cover'}}
+        />
       </View>
     </View>
   );
