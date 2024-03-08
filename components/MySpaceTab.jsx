@@ -14,7 +14,7 @@ const MySpaceTab = () => {
         }}>
         <View style={{padding: 10}}>
           <Text style={{color: 'gray', fontSize: 14, fontWeight: 'bold'}}>
-            Pocasts
+            Podcasts
           </Text>
         </View>
         <View

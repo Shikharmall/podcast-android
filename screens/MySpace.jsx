@@ -60,10 +60,14 @@ export default function MySpace() {
             activeOpacity={1}
             style={{
               //backgroundColor: '#0f1014',
+              //backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              backgroundColor: 'rgba(255, 255, 255, 0.2)',
               position: 'absolute',
               top: 0,
               right: 0,
               padding: 7,
+              borderRadius: 50,
+              margin: 2,
             }}>
             <Svg
               xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +84,8 @@ export default function MySpace() {
               style={{
                 backgroundColor: '#0f1014',
                 position: 'absolute',
-                top: 30,
-                right: 15,
+                top: 40,
+                right: 25,
                 padding: 7,
                 width: 200,
                 height: 100,
