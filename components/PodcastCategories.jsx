@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -10,6 +10,16 @@ import {
 } from 'react-native';
 
 export default function PodcastCategories({title, item, navigation}) {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePressIn = () => {
+    setIsPressed(true);
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
+  };
+
   const openPodcast = podcastId => {
     navigation.navigate('PodcastDetails', {podcastId});
   };
@@ -20,12 +30,17 @@ export default function PodcastCategories({title, item, navigation}) {
         activeOpacity={1}
         onPress={() => {
           openPodcast(item.id);
-        }}>
+        }}
+        //onPressIn={handlePressIn}
+        //onPressOut={handlePressOut}
+      >
         <Image
           source={item.image}
           style={{
-            width: 130,
-            height: 160,
+            //width: 130,
+            //height: 160,
+            width: isPressed ? 130 : 128,
+            height: isPressed ? 160 : 158,
             margin: 5,
             resizeMode: 'cover',
             borderRadius: 5,

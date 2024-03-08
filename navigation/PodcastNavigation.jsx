@@ -22,6 +22,7 @@ const PodcastNavigation = () => {
         component={PodcastDetails}
         options={{
           headerShown: false,
+          //headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>
