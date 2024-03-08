@@ -18,7 +18,9 @@ const TrailorVideo = ({navigation}) => {
     return `${mins}:${secs}`;
   };*/
   const [startVideo, setStartVideo] = useState(false);
-  const [isMute, seIsMute] = useState(true);
+  const [isMute, setIsMute] = useState(true);
+
+  console.log(isMute);
 
   useEffect(() => {
     setTimeout(() => {
@@ -56,31 +58,46 @@ const TrailorVideo = ({navigation}) => {
             //onError={(error) => console.log('Error occurred: ', error)}
             //onProgress={(data) => console.log('Video progress: ', data)}
             //controls={true} // You can add controls if needed
+            muted={isMute}
           />
           {isMute ? (
-            <Svg
-              style={{position: 'absolute', bottom: 20, right: 20}}
-              width="30px"
-              height="30px"
-              viewBox="0 0 16 16"
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg">
-              <Path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M1.5 5h2.79l3.86-3.83.85.35v13l-.85.33L4.29 11H1.5l-.5-.5v-5l.5-.5zm3.35 5.17L8 13.31V2.73L4.85 5.85 4.5 6H2v4h2.5l.35.17zm9.381-4.108l.707.707L13.207 8.5l1.731 1.732-.707.707L12.5 9.207l-1.732 1.732-.707-.707L11.793 8.5 10.06 6.77l.707-.707 1.733 1.73 1.731-1.731z"
-              />
-            </Svg>
+            <TouchableOpacity
+              //activeOpacity={1}
+              onPress={() => {
+                setIsMute(!isMute); // Toggle the mute state
+              }}
+              width="20px"
+              height="20px">
+              <Svg
+                xmlns="http://www.w3.org/2000/svg"
+                style={{
+                  position: 'absolute',
+                  bottom: 20,
+                  right: 20,
+                }}
+                width="20px"
+                height="20px"
+                fill={'white'}
+                viewBox="0 0 24 24">
+                <Path d="M21.29 1.29l-3.43 3.44a2.52 2.52 0 00-3.8-1.3L8.7 7H5a1 1 0 00-1 1v8a1 1 0 001 1h.59l-4.3 4.29a1 1 0 001.42 1.42C9.05 16.36 8.29 17 8.7 17c5.7 3.8 5.73 4 6.76 4A2.54 2.54 0 0018 18.46v-11l4.71-4.7a1 1 0 00-1.42-1.47zm-6.12 3.8a.55.55 0 01.83.45v1l-6 6v-4zM6 15V9h2c0 6.81.53 6-2 6zm10 3.46a.55.55 0 01-.83.45L10 15.46c0-.1-.46.42 6-6.05z" />
+              </Svg>
+            </TouchableOpacity>
           ) : (
-            <Svg
-              style={{position: 'absolute', bottom: 20, right: 20}}
-              width="30px"
-              height="30px"
-              viewBox="0 0 24 24"
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg">
-              <Path d="M12.43 4.1a1 1 0 00-1 .12L6.65 8H3a1 1 0 00-1 1v6a1 1 0 001 1h3.65l4.73 3.78A1 1 0 0012 20a.91.91 0 00.43-.1A1 1 0 0013 19V5a1 1 0 00-.57-.9zM11 16.92l-3.38-2.7A1 1 0 007 14H4v-4h3a1 1 0 00.62-.22L11 7.08zm8.66-10.58a1 1 0 00-1.42 1.42 6 6 0 01-.38 8.84 1 1 0 00.64 1.76 1 1 0 00.64-.23 8 8 0 00.52-11.79zm-2.83 2.83a1 1 0 10-1.42 1.42A2 2 0 0116 12a2 2 0 01-.71 1.53 1 1 0 00-.13 1.41 1 1 0 001.41.12A4 4 0 0018 12a4.06 4.06 0 00-1.17-2.83z" />
-            </Svg>
+            <TouchableOpacity
+              //activeOpacity={1}
+              onPress={() => {
+                setIsMute(!isMute); // Toggle the mute state
+              }}>
+              <Svg
+                style={{position: 'absolute', bottom: 20, right: 20}}
+                width="20px"
+                height="20px"
+                viewBox="0 0 24 24"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg">
+                <Path d="M12.43 4.1a1 1 0 00-1 .12L6.65 8H3a1 1 0 00-1 1v6a1 1 0 001 1h3.65l4.73 3.78A1 1 0 0012 20a.91.91 0 00.43-.1A1 1 0 0013 19V5a1 1 0 00-.57-.9zM11 16.92l-3.38-2.7A1 1 0 007 14H4v-4h3a1 1 0 00.62-.22L11 7.08zm8.66-10.58a1 1 0 00-1.42 1.42 6 6 0 01-.38 8.84 1 1 0 00.64 1.76 1 1 0 00.64-.23 8 8 0 00.52-11.79zm-2.83 2.83a1 1 0 10-1.42 1.42A2 2 0 0116 12a2 2 0 01-.71 1.53 1 1 0 00-.13 1.41 1 1 0 001.41.12A4 4 0 0018 12a4.06 4.06 0 00-1.17-2.83z" />
+              </Svg>
+            </TouchableOpacity>
           )}
         </>
       ) : (
@@ -101,8 +118,8 @@ const TrailorVideo = ({navigation}) => {
           handleGoBack();
         }}>
         <Svg
-          width="30px"
-          height="30px"
+          width="20px"
+          height="20px"
           viewBox="-3.5 0 19 19"
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
