@@ -9,21 +9,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default function PodcastCategories({title, item}) {
-  /*const renderItemFunc1 = ({item}) => {
-    return null;
-  };*/
-
-  const openPodcast = () =>{
-    
-  }
+export default function PodcastCategories({title, item, navigation}) {
+  const openPodcast = podcastId => {
+    navigation.navigate('PodcastDetails', {podcastId});
+  };
 
   const renderItemFunc = ({item}) => {
     return (
       <TouchableOpacity
-       activeOpacity={1}
-       onPress={openPodcast}
-      >
+        activeOpacity={1}
+        onPress={() => {
+          openPodcast(item.id);
+        }}>
         <Image
           source={item.image}
           style={{

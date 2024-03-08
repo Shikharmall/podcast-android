@@ -1,10 +1,10 @@
-import {View, Text, Image, Dimensions} from 'react-native';
+import {View, Text, Image, Dimensions, TouchableOpacity} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
 const screenWidth = Dimensions.get('window').width;
 import Video from 'react-native-video';
 
-const TrailorVideo = () => {
+const TrailorVideo = ({navigation}) => {
   /*const [clicked, setClicked] = useState(false);
   const [puased, setPaused] = useState(false);
   const [progress, setProgress] = useState(null);
@@ -25,6 +25,10 @@ const TrailorVideo = () => {
       setStartVideo(true);
     }, 3000);
   }, []);
+
+  const handleGoBack = () => {
+    navigation.goBack(); // Go back to the previous screen
+  };
 
   return (
     <View style={{position: 'relative'}}>
@@ -90,16 +94,22 @@ const TrailorVideo = () => {
           }}
         />
       )}
-      <Svg
+      <TouchableOpacity
+        activeOpacity={1}
         style={{position: 'absolute', top: 20, right: 20}}
-        width="30px"
-        height="30px"
-        viewBox="-3.5 0 19 19"
-        fill="white"
-        xmlns="http://www.w3.org/2000/svg"
-        className="cf-icon-svg">
-        <Path d="M11.383 13.644A1.03 1.03 0 019.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 11-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 111.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 011.455 1.456L7.455 9.716z" />
-      </Svg>
+        onPress={() => {
+          handleGoBack();
+        }}>
+        <Svg
+          width="30px"
+          height="30px"
+          viewBox="-3.5 0 19 19"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          className="cf-icon-svg">
+          <Path d="M11.383 13.644A1.03 1.03 0 019.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 11-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 111.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 011.455 1.456L7.455 9.716z" />
+        </Svg>
+      </TouchableOpacity>
 
       {/*<Video />*/}
 

@@ -6,95 +6,64 @@
  */
 
 import React from 'react';
-//import type { PropsWithChildren } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import Svg, {Path} from 'react-native-svg';
-
-/*
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';*/
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Navbar from './partials/Navbar';
-import Header from './partials/Header';
+//import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 import Home from './screens/Home';
 import Search from './screens/Search';
 import New from './screens/New';
 import Download from './screens/Download';
 import MySpace from './screens/MySpace';
 import CustomBottomTabBar from './partials/CustomBottomTabBar';
+
 import Login from './screens/Login';
 import OtpCheck from './screens/OtpCheck';
 import UserDetails from './screens/UserDetails';
 import PodcastDetails from './screens/PodcastDetails';
 import VideoStreaming from './screens/VideoStreaming';
 
-/*
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({ children, title }: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}*/
-
-//export type RootStackParamList = {
-//  Home: undefined;
-//  Search: undefined;
-//}
-
-//const Stack = createNativeStackNavigator<RootStackParamList>();
+import PodcastNavigation from './navigation/PodcastNavigation';
 
 const Tab = createBottomTabNavigator();
+/*const Stack = createNativeStackNavigator();
+
+const BooksStack = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="BooksList"
+      component={BooksListScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="BookDetails"
+      component={BookDetailsScreen}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </Stack.Navigator>
+);*/
 
 function App() {
-  //: JSX.Element
   return (
     <>
+      {/*<Tab.Screen
+      name="Home"
+      component={Home}
+      options={{
+        headerShown: false,
+      }}
+    />*/}
       <NavigationContainer>
         <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
           <Tab.Screen
-            name="Home"
-            component={Home}
+            name="Books"
+            component={PodcastNavigation}
             options={{
               headerShown: false,
             }}
@@ -134,7 +103,6 @@ function App() {
       {/*<Login />*/}
       {/*<OtpCheck />*/}
       {/*<UserDetails />*/}
-
       {/*<PodcastDetails />*/}
       {/*<VideoStreaming />*/}
     </>

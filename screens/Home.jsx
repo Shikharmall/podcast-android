@@ -1,9 +1,9 @@
 import {View, SafeAreaView, ScrollView, StatusBar, Text} from 'react-native';
 import React from 'react';
 import Carousel from '../components/Carousel';
-import PodcastCategories from '../components/PodcastCategories'; 
+import PodcastCategories from '../components/PodcastCategories';
 
-export default function Home() {
+export default function Home({navigation}) {
   const podcastsData = [
     {
       id: 1,
@@ -51,9 +51,6 @@ export default function Home() {
       <View style={{backgroundColor: '#0f1014', flex: 1}}>
         <SafeAreaView>
           <ScrollView contentInsetAdjustmentBehavior="automatic">
-
-            
-
             <Carousel />
             {podcastsData &&
               podcastsData.map((item, index) => (
@@ -61,6 +58,7 @@ export default function Home() {
                   title={'Recent Podcasts'}
                   key={index}
                   item={item}
+                  navigation={navigation}
                 />
               ))}
           </ScrollView>
