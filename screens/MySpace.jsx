@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
+import MySpaceTab from '../components/MySpaceTab';
 
 export default function MySpace() {
   const screenWidth = Dimensions.get('window').width;
@@ -188,6 +189,7 @@ export default function MySpace() {
             style={{width: screenWidth, height: 500}}
           />
         </View>*/}
+        <MySpaceTab />
       </SafeAreaView>
     </View>
   );

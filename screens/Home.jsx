@@ -1,7 +1,7 @@
-import {View, SafeAreaView, ScrollView, StatusBar} from 'react-native';
+import {View, SafeAreaView, ScrollView, StatusBar, Text} from 'react-native';
 import React from 'react';
 import Carousel from '../components/Carousel';
-import PodcastCategories from '../components/PodcastCategories';
+import PodcastCategories from '../components/PodcastCategories'; 
 
 export default function Home() {
   const podcastsData = [
@@ -44,21 +44,28 @@ export default function Home() {
   ];
   return (
     <>
-    <StatusBar
+      <StatusBar
         backgroundColor="#0f1014" // Set your desired color here
         //barStyle="light-content" // Set the text color of the status bar
       />
-    <View style={{backgroundColor: '#0f1014', flex: 1}}>
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Carousel />
-          {podcastsData &&
-            podcastsData.map((item, index) => (
-              <PodcastCategories title={'Recent Podcasts'} key={index} item={item}/>
-            ))}
-        </ScrollView>
-      </SafeAreaView>
-    </View>
+      <View style={{backgroundColor: '#0f1014', flex: 1}}>
+        <SafeAreaView>
+          <ScrollView contentInsetAdjustmentBehavior="automatic">
+
+            
+
+            <Carousel />
+            {podcastsData &&
+              podcastsData.map((item, index) => (
+                <PodcastCategories
+                  title={'Recent Podcasts'}
+                  key={index}
+                  item={item}
+                />
+              ))}
+          </ScrollView>
+        </SafeAreaView>
+      </View>
     </>
   );
 }
