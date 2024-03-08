@@ -62,7 +62,7 @@ function App() {
       <NavigationContainer>
         <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
           <Tab.Screen
-            name="Books"
+            name="Home"
             component={PodcastNavigation}
             options={{
               headerShown: false,
