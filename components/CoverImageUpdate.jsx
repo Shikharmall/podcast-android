@@ -27,7 +27,8 @@ const CoverImageUpdate = ({navigation}) => {
               //activeOpacity={1}
               onPress={() => {
                 navigation.goBack();
-              }}>
+              }}
+              style={{padding: 10}}>
               <Svg
                 width="18px"
                 height="18px"
