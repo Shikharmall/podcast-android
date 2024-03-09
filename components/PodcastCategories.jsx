@@ -44,7 +44,7 @@ export default function PodcastCategories({title, item, navigation}) {
             margin: 5,
             resizeMode: 'cover',
             borderRadius: 5,
-            backgroundColor: 'blue',
+            backgroundColor: 'gray',
           }}
         />
       </TouchableOpacity>
