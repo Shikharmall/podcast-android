@@ -9,7 +9,7 @@ import {
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-const ProfileImageUpdate = () => {
+const ProfileImageUpdate = ({navigation}) => {
   const screenWidth = Dimensions.get('window').width;
 
   return (
@@ -23,7 +23,11 @@ const ProfileImageUpdate = () => {
               alignItems: 'center',
               padding: 5,
             }}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              //activeOpacity={1}
+              onPress={() => {
+                navigation.goBack();
+              }}>
               <Svg
                 width="18px"
                 height="18px"

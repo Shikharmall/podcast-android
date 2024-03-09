@@ -10,13 +10,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-//import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import Home from './screens/Home';
 import Search from './screens/Search';
 import New from './screens/New';
 import Download from './screens/Download';
-import MySpace from './screens/MySpace';
 import CustomBottomTabBar from './partials/CustomBottomTabBar';
 
 import Login from './screens/Login';
@@ -26,29 +22,9 @@ import PodcastDetails from './screens/PodcastDetails';
 import VideoStreaming from './screens/VideoStreaming';
 
 import PodcastNavigation from './navigation/PodcastNavigation';
-import ProfileImage from './components/ProfileImageUpdate';
+import ProfileNavigation from './navigation/ProfileNavigation';
 
 const Tab = createBottomTabNavigator();
-/*const Stack = createNativeStackNavigator();
-
-const BooksStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen
-      name="BooksList"
-      component={BooksListScreen}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name="BookDetails"
-      component={BookDetailsScreen}
-      options={{
-        headerShown: false,
-      }}
-    />
-  </Stack.Navigator>
-);*/
 
 function App() {
   return (
@@ -85,7 +61,7 @@ function App() {
           />
           <Tab.Screen
             name="MySpace"
-            component={MySpace}
+            component={ProfileNavigation}
             activeOpacity={1}
             options={{
               headerShown: false,
@@ -99,7 +75,6 @@ function App() {
       {/*<UserDetails />*/}
       {/*<PodcastDetails />*/}
       {/*<VideoStreaming />*/}
-      {/*<ProfileImage />*/}
     </>
   );
 }

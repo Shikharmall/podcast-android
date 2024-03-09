@@ -11,15 +11,15 @@ import React, {useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
 import MySpaceTab from '../components/MySpaceTab';
 
-export default function MySpace() {
+export default function MySpace({navigation}) {
   const screenWidth = Dimensions.get('window').width;
-  const screenHeight = Dimensions.get('window').height;
+  //const screenHeight = Dimensions.get('window').height;
 
   const [isShow, setIsShow] = useState(false);
   const togglePopUp = () => {
     setIsShow(!isShow);
   };
-  //console.log(isShow);
+
   return (
     <View
       style={{
@@ -32,12 +32,18 @@ export default function MySpace() {
         }}>
         {/* header */}
         <View style={{position: 'relative'}}>
-          <View
-            style={{
-              backgroundColor: 'gray',
-              height: 150,
-              width: screenWidth,
-            }}></View>
+          <TouchableOpacity
+            //activeOpacity={1}
+            onPress={() => {
+              navigation.navigate('CoverImageUpdate');
+            }}>
+            <View
+              style={{
+                backgroundColor: 'gray',
+                height: 150,
+                width: screenWidth,
+              }}></View>
+          </TouchableOpacity>
           <View
             style={{
               backgroundColor: '#0f1014',
@@ -49,10 +55,16 @@ export default function MySpace() {
               left: 30,
               padding: 3,
             }}>
-            <Image
-              source={require('../image/user.png')}
-              style={{width: '100%', height: '100%'}}
-            />
+            <TouchableOpacity
+              //activeOpacity={1}
+              onPress={() => {
+                navigation.navigate('ProfileImageUpdate');
+              }}>
+              <Image
+                source={require('../image/user.png')}
+                style={{width: '100%', height: '100%'}}
+              />
+            </TouchableOpacity>
           </View>
 
           <TouchableOpacity

@@ -3,30 +3,33 @@ import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/Home';
-import PodcastDetails from '../screens/PodcastDetails';
-import VideoStreaming from '../screens/VideoStreaming';
+import MySpace from '../screens/MySpace';
+import ProfileImageUpdate from '../components/ProfileImageUpdate';
+import CoverImageUpdate from '../components/CoverImageUpdate';
 
-const ProfileImageNavigation = () => {
+const Stack = createNativeStackNavigator();
+
+const ProfileNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName="HomeScreen">
+    <Stack.Navigator initialRouteName="MySpaceScreen">
       <Stack.Screen
-        name="HomeScreen"
-        component={Home}
+        name="MySpaceScreen"
+        component={MySpace}
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="PodcastDetails"
-        component={PodcastDetails}
+        name="ProfileImageUpdate"
+        component={ProfileImageUpdate}
         options={{
           headerShown: false,
           //headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
-        name="VideoStreaming"
-        component={VideoStreaming}
+        name="CoverImageUpdate"
+        component={CoverImageUpdate}
         options={{
           headerShown: false,
           //headerBackTitleVisible: false,
@@ -36,4 +39,4 @@ const ProfileImageNavigation = () => {
   );
 };
 
-export default ProfileImageNavigation;
+export default ProfileNavigation;
