@@ -6,9 +6,7 @@ import Home from '../screens/Home';
 import PodcastDetails from '../screens/PodcastDetails';
 import VideoStreaming from '../screens/VideoStreaming';
 
-const Stack = createNativeStackNavigator();
-
-const PodcastNavigation = () => {
+const ProfileImageNavigation = () => {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
@@ -38,4 +36,4 @@ const PodcastNavigation = () => {
   );
 };
 
-export default PodcastNavigation;
+export default ProfileImageNavigation;

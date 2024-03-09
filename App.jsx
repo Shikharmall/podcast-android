@@ -26,6 +26,7 @@ import PodcastDetails from './screens/PodcastDetails';
 import VideoStreaming from './screens/VideoStreaming';
 
 import PodcastNavigation from './navigation/PodcastNavigation';
+import ProfileImage from './components/ProfileImageUpdate';
 
 const Tab = createBottomTabNavigator();
 /*const Stack = createNativeStackNavigator();
@@ -52,14 +53,7 @@ const BooksStack = () => (
 function App() {
   return (
     <>
-      {/*<Tab.Screen
-      name="Home"
-      component={Home}
-      options={{
-        headerShown: false,
-      }}
-    />*/}
-      <NavigationContainer>
+      {/*<NavigationContainer>
         <Tab.Navigator tabBar={props => <CustomBottomTabBar {...props} />}>
           <Tab.Screen
             name="Home"
@@ -98,13 +92,14 @@ function App() {
             }}
           />
         </Tab.Navigator>
-      </NavigationContainer>
+      </NavigationContainer>*/}
 
       {/*<Login />*/}
       {/*<OtpCheck />*/}
       {/*<UserDetails />*/}
       {/*<PodcastDetails />*/}
       {/*<VideoStreaming />*/}
+      <ProfileImage />
     </>
   );
 }
