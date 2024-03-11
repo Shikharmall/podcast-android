@@ -3,7 +3,7 @@ import React from 'react';
 import {Path, Svg} from 'react-native-svg';
 import Episode from './Episode';
 
-const SeasonsEpisodeDescription = () => {
+const SeasonsEpisodeDescription = ({navigation}) => {
   return (
     <View>
       <View
@@ -35,12 +35,12 @@ const SeasonsEpisodeDescription = () => {
         </View>
       </View>
       <View>
-        <Episode />
-        <Episode />
-        <Episode />
-        <Episode />
-        <Episode />
-        <Episode />
+        <Episode navigation={navigation} />
+        <Episode navigation={navigation} />
+        <Episode navigation={navigation} />
+        <Episode navigation={navigation} />
+        <Episode navigation={navigation} />
+        <Episode navigation={navigation} />
       </View>
     </View>
   );

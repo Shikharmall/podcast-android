@@ -13,7 +13,7 @@ export default function PodcastDetails({route, navigation}) {
         <ScrollView contentInsetAdjustmentBehavior="automatic">
           <TrailorVideo navigation={navigation} />
           <PodcastDescription />
-          <SeasonsEpisodeDescription />
+          <SeasonsEpisodeDescription navigation={navigation}/>
         </ScrollView>
       </SafeAreaView>
     </View>

@@ -54,6 +54,7 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
 
         return (
           <TouchableOpacity
+            activeOpacity={1}
             key={index}
             onPress={onPress}
             style={{
@@ -63,9 +64,12 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
               borderTopWidth: 0.5,
               borderTopColor: 'rgba(134, 140, 153, 0.5)',
             }}>
-            
             {renderIcon(route, isFocused)}
-            <Text style={{color: isFocused ? '#e2e6f1' : '#868c99', fontWeight: isFocused ? 'bold' : 'normal',} }>
+            <Text
+              style={{
+                color: isFocused ? '#e2e6f1' : '#868c99',
+                fontWeight: isFocused ? 'bold' : 'normal',
+              }}>
               {label}
             </Text>
           </TouchableOpacity>
@@ -77,7 +81,4 @@ const CustomBottomTabBar = ({state, descriptors, navigation}) => {
 
 export default CustomBottomTabBar;
 
-const styles = StyleSheet.create({
-  
-})
-
+const styles = StyleSheet.create({});
