@@ -5,7 +5,7 @@ import PodcastDescription from '../components/PodcastDescription';
 import SeasonsEpisodeDescription from '../components/SeasonsEpisodeDescription';
 
 export default function PodcastDetails({route, navigation}) {
-  const {podcastId} = route.params;
+ const {podcastId} = route.params;
 
   return (
     <View style={{backgroundColor: '#0f1014', flex: 1}}>
