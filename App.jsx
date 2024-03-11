@@ -107,7 +107,7 @@ function App() {
             })}
           />
           <Tab.Screen
-            name="MySpace"
+            name="My Space"
             component={ProfileNavigation}
             activeOpacity={1}
             options={({route}) => ({

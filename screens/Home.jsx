@@ -67,3 +67,7 @@ export default function Home({navigation}) {
     </>
   );
 }
+
+Home.screenOrientation = {
+  screenOrientation: 'portrait', // or 'landscape'
+};
