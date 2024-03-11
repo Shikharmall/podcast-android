@@ -112,7 +112,7 @@ function App() {
             activeOpacity={1}
             options={({route}) => ({
               tabBarStyle: {
-                //display: getTabBarVisibility(route),
+                display: getTabBarVisibility(route),
                 backgroundColor: '#0f1014',
                 paddingVertical: 10,
                 height: 60,
@@ -139,7 +139,12 @@ const getTabBarVisibility = route => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Home';
   //console.log(routeName);
 
-  if (routeName === 'PodcastDetails' || routeName === 'VideoStreaming') {
+  if (
+    routeName === 'PodcastDetails' ||
+    routeName === 'VideoStreaming' ||
+    routeName === 'ProfileImageUpdate' ||
+    routeName === 'CoverImageUpdate'
+  ) {
     return 'none';
   }
 
