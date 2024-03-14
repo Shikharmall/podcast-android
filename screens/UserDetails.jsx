@@ -148,7 +148,7 @@ export default function UserDetails({navigation}) {
             flexDirection: 'column',
           }}>
           <SafeAreaView style={{flex: 1, marginHorizontal: 15}}>
-            <View style={{flex: 6}}>
+            <View style={{flex: 11}}>
               <TouchableOpacity
                 style={{
                   flex: 1,

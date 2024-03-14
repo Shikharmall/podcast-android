@@ -48,13 +48,13 @@ export default function LoginNavigation() {
           headerShown: false,
         }}
       />
-      <Stack.Screen
+      {/*<Stack.Screen
         name="MainApp"
         component={MainAppNavigation}
         options={{
           headerShown: false,
         }}
-      />
+      />*/}
     </Stack.Navigator>
   );
 }
