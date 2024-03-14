@@ -1,11 +1,15 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from '../screens/Login';
-import MainAppNavigation from './MainAppNavigation';
-import {NavigationContainer} from '@react-navigation/native';
+//import MainAppNavigation from './MainAppNavigation';
+//import {NavigationContainer} from '@react-navigation/native';
 import OtpCheck from '../screens/OtpCheck';
 import UserDetails from '../screens/UserDetails';
 import MySpaceLogin from '../components/MySpaceLogin';
+
+import {enableScreens} from 'react-native-screens';
+
+enableScreens(); // Optimize screen switching
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +28,7 @@ export default function LoginNavigation() {
         component={MySpaceLogin}
         options={{
           headerShown: false,
+          animationEnabled: true, // Enable animation
         }}
       />
       <Stack.Screen
@@ -31,6 +36,7 @@ export default function LoginNavigation() {
         component={Login}
         options={{
           headerShown: false,
+          animationEnabled: true, // Enable animation
         }}
       />
       <Stack.Screen
@@ -38,6 +44,7 @@ export default function LoginNavigation() {
         component={OtpCheck}
         options={{
           headerShown: false,
+          animationEnabled: true, // Enable animation
         }}
       />
 
@@ -46,6 +53,7 @@ export default function LoginNavigation() {
         component={UserDetails}
         options={{
           headerShown: false,
+          animationEnabled: true, // Enable animation
         }}
       />
       {/*<Stack.Screen

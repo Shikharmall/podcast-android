@@ -275,6 +275,7 @@ export default function UserDetails({navigation}) {
                       marginVertical: 25,
                       overflow: 'hidden', // Ensures the gradient doesn't overflow the TouchableOpacity boundaries
                     }}
+                    activeOpacity={1}
                     onPress={() => {
                       //navigation.navigate('Login');
                     }}>
