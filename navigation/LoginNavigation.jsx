@@ -1,9 +1,10 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from '../screens/Login';
-import Register from '../screens/Register';
 import MainAppNavigation from './MainAppNavigation';
 import {NavigationContainer} from '@react-navigation/native';
+import OtpCheck from '../screens/OtpCheck';
+import UserDetails from '../screens/UserDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,8 +20,16 @@ export default function LoginNavigation() {
           }}
         />
         <Stack.Screen
-          name="Register"
-          component={Register}
+          name="OtpCheck"
+          component={OtpCheck}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="UserDetails"
+          component={UserDetails}
           options={{
             headerShown: false,
           }}

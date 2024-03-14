@@ -109,7 +109,7 @@ export default function Login({navigation}) {
                 <TouchableOpacity
                   //activeOpacity={1}
                   onPress={() => {
-                    navigation.navigate('MainApp');
+                    navigation.navigate('OtpCheck');
                   }}
                   style={{
                     padding: 15,
