@@ -10,6 +10,7 @@ import {
 import React from 'react';
 
 import Svg, {Path} from 'react-native-svg';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function UserDetails({navigation}) {
   return (
@@ -240,15 +241,15 @@ export default function UserDetails({navigation}) {
                 </View>
               </View>
             </View>
-            <View style={{flex: 1}}>
-              <View style={{marginVertical: 10, flex: 1}}>
+            <View style={{}}>
+              <View style={{marginVertical: 10}}>
                 <View
                   style={{
                     flexDirection: 'row',
-                    justifyContent: 'flex-end',
-                    alignItems: 'center',
+                    justifyContent: 'center',
+                    //alignItems: 'center',
                   }}>
-                  <TouchableOpacity
+                  {/*<TouchableOpacity
                     //activeOpacity={1}
                     onPress={() => {
                       navigation.navigate('MainApp');
@@ -267,6 +268,34 @@ export default function UserDetails({navigation}) {
                       xmlns="http://www.w3.org/2000/svg">
                       <Path d="M16.972 6.251a1.999 1.999 0 00-2.72.777l-3.713 6.682-2.125-2.125a2 2 0 10-2.828 2.828l4 4c.378.379.888.587 1.414.587l.277-.02a2 2 0 001.471-1.009l5-9a2 2 0 00-.776-2.72z" />
                     </Svg>
+                  </TouchableOpacity>*/}
+                  <TouchableOpacity
+                    style={{
+                      borderRadius: 10,
+                      marginVertical: 25,
+                      overflow: 'hidden', // Ensures the gradient doesn't overflow the TouchableOpacity boundaries
+                    }}
+                    onPress={() => {
+                      //navigation.navigate('Login');
+                    }}>
+                    <LinearGradient
+                      colors={['#0a55d4', '#174696']} // Specify your two color shades here
+                      start={{x: 0, y: 0}} // Gradient start point
+                      end={{x: 1, y: 0}} // Gradient end point
+                      style={{
+                        paddingHorizontal: 100,
+                        paddingVertical: 18,
+                        borderRadius: 10,
+                      }}>
+                      <Text
+                        style={{
+                          color: 'white',
+                          fontSize: 15,
+                          fontWeight: 'bold',
+                        }}>
+                        Create Your Profile
+                      </Text>
+                    </LinearGradient>
                   </TouchableOpacity>
                 </View>
               </View>
