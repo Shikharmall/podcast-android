@@ -6,12 +6,17 @@
  */
 
 import React from 'react';
-import LoginNavigation from './navigation/LoginNavigation';
+//import LoginNavigation from './navigation/LoginNavigation';
+import MainAppNavigation from './navigation/MainAppNavigation';
+import {NavigationContainer} from '@react-navigation/native';
 
 function App() {
   return (
     <>
-      <LoginNavigation />
+      <NavigationContainer>
+        {/*<LoginNavigation />*/}
+        <MainAppNavigation />
+      </NavigationContainer>
 
       {/*<Login />*/}
       {/*<OtpCheck />*/}

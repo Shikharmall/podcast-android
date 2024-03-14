@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   NavigationContainer,
@@ -17,9 +17,25 @@ import NewIcon from '../icons/NewIcon';
 import DownloadIcon from '../icons/DownloadIcon';
 import MySpaceIcon from '../icons/MySpaceIcon';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import LoginNavigation from './LoginNavigation';
+
 const Tab = createBottomTabNavigator();
 
 export default function MainAppNavigation() {
+  const [isLogin, setIsLogin] = useState(false);
+  const handleLogin = async () => {
+    //console.log('Hello');
+    const userToken = await AsyncStorage.getItem('userToken');
+    if (userToken) {
+      setIsLogin(true);
+    }
+    console.log(userToken);
+  };
+
+  useEffect(() => {
+    handleLogin();
+  }, []);
   return (
     <Tab.Navigator
       screenOptions={{
@@ -86,7 +102,7 @@ export default function MainAppNavigation() {
       />
       <Tab.Screen
         name="My Space"
-        component={ProfileNavigation}
+        component={isLogin ? ProfileNavigation : LoginNavigation}
         activeOpacity={1}
         options={({route}) => ({
           tabBarStyle: {
@@ -113,7 +129,10 @@ const getTabBarVisibility = route => {
     routeName === 'PodcastDetails' ||
     routeName === 'VideoStreaming' ||
     routeName === 'ProfileImageUpdate' ||
-    routeName === 'CoverImageUpdate'
+    routeName === 'CoverImageUpdate' ||
+    routeName === 'Login' ||
+    routeName === 'OtpCheck' ||
+    routeName === 'UserDetails'
   ) {
     return 'none';
   }
