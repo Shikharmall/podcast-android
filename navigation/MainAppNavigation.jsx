@@ -30,7 +30,7 @@ export default function MainAppNavigation() {
     if (userToken) {
       setIsLogin(true);
     }
-    console.log(userToken);
+    //console.log(userToken);
   };
 
   useEffect(() => {
