@@ -9,16 +9,13 @@ import React from 'react';
 //import LoginNavigation from './navigation/LoginNavigation';
 import MainAppNavigation from './navigation/MainAppNavigation';
 import {NavigationContainer} from '@react-navigation/native';
-import VideoStream from './screens/VideoStreaming';
 
 function App() {
   return (
     <>
-      {/*<NavigationContainer>
+      <NavigationContainer>
         <MainAppNavigation />
-      </NavigationContainer>*/}
-
-      <VideoStream />
+      </NavigationContainer>
 
       {/*<Login />*/}
       {/*<OtpCheck />*/}

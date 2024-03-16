@@ -277,7 +277,7 @@ export default function UserDetails({navigation}) {
                     }}
                     activeOpacity={1}
                     onPress={() => {
-                      //navigation.navigate('Login');
+                      navigation.navigate('Home');
                     }}>
                     <LinearGradient
                       colors={['#0a55d4', '#174696']} // Specify your two color shades here

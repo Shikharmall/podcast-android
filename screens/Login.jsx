@@ -10,6 +10,7 @@ import {
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Path, Svg} from 'react-native-svg';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function Login({navigation}) {
   const [isFocused, setIsFocused] = useState(false);
@@ -94,7 +95,11 @@ export default function Login({navigation}) {
 
             <View style={{marginVertical: 10, flex: 1}}>
               <View
-                style={{flexDirection: 'row', justifyContent: 'space-between' , alignItems: 'center'}}>
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
                 <Text
                   style={{
                     color: 'gray',
@@ -106,7 +111,7 @@ export default function Login({navigation}) {
                     Get Help
                   </Text>
                 </Text>
-                <TouchableOpacity
+                {/*<TouchableOpacity
                   //activeOpacity={1}
                   onPress={() => {
                     navigation.navigate('OtpCheck');
@@ -127,6 +132,40 @@ export default function Login({navigation}) {
                       d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"
                     />
                   </Svg>
+                </TouchableOpacity>*/}
+                <TouchableOpacity
+                  style={{
+                    //padding: 15,
+                    //backgroundColor: '#0a55d4',
+                    //borderRadius: 50,
+                    overflow: 'hidden',
+                  }}
+                  onPress={() => {
+                    navigation.navigate('OtpCheck');
+                  }}>
+                  <LinearGradient
+                    colors={['#0a55d4', '#174696']} // Specify your two color shades here
+                    start={{x: 0, y: 0}} // Gradient start point
+                    end={{x: 1, y: 0}} // Gradient end point
+                    style={{
+                      //paddingHorizontal: 80,
+                      //paddingVertical: 18,
+                      //borderRadius: 10,
+                      padding: 15,
+                      borderRadius: 50,
+                    }}>
+                    <Svg
+                      width="15px"
+                      height="15px"
+                      viewBox="0 0 1024 1024"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="white">
+                      <Path
+                        transform="rotate(180 512 512)"
+                        d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"
+                      />
+                    </Svg>
+                  </LinearGradient>
                 </TouchableOpacity>
               </View>
             </View>

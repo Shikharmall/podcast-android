@@ -9,7 +9,11 @@ import {
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import {Path, Svg} from 'react-native-svg';
+import ImageWithLoad from './ImageWithLoad';
 import LinearGradient from 'react-native-linear-gradient';
+import {createShimmerPlaceholder} from 'react-native-shimmer-placeholder';
+
+const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
 
 export default function Carousel() {
   const flatListRef = useRef();
@@ -39,6 +43,8 @@ export default function Carousel() {
     return (
       <View>
         <Image source={item.image} style={{height: 300, width: screenWidth}} />
+
+        {/*<ImageWithLoad url={item.image} />*/}
 
         <LinearGradient
           //colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.5)', 'rgba(0,0,0,1)']}
@@ -89,6 +95,40 @@ export default function Carousel() {
 
   return (
     <>
+      {/*<ShimmerPlaceholder
+        style={{
+          height: 300,
+          width: '95%',
+          margin: '2.5%',
+          marginVertical: '0.5%',
+          //backgroundColor: '#9e9e9e',
+          borderRadius: 3,
+        }}
+        //shimmerColors={['gray']}
+      />
+
+      <ShimmerPlaceholder
+        style={{
+          height: 25,
+          width: '40%',
+          margin: '2.5%',
+          marginVertical: '0.5%',
+          borderRadius: 3,
+        }}
+        //shimmerColors={['gray']}
+      />
+
+      <ShimmerPlaceholder
+        style={{
+          height: 200,
+          width: '95%',
+          margin: '2.5%',
+          marginVertical: '0.5%',
+          borderRadius: 3,
+        }}
+        //shimmerColors={['gray']}
+      />*/}
+
       <View style={{position: 'relative'}}>
         <FlatList
           ref={flatListRef}

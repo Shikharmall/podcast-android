@@ -56,13 +56,6 @@ export default function LoginNavigation() {
           animationEnabled: true, // Enable animation
         }}
       />
-      {/*<Stack.Screen
-        name="MainApp"
-        component={MainAppNavigation}
-        options={{
-          headerShown: false,
-        }}
-      />*/}
     </Stack.Navigator>
   );
 }

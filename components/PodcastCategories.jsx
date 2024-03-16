@@ -8,6 +8,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
+import ImageWithLoad from './ImageWithLoad';
 
 export default function PodcastCategories({title, item, navigation}) {
   const [isPressed, setIsPressed] = useState(false);
@@ -34,7 +35,7 @@ export default function PodcastCategories({title, item, navigation}) {
         //onPressIn={handlePressIn}
         //onPressOut={handlePressOut}
       >
-        <Image
+        {/*<Image
           source={item.image}
           style={{
             //width: 130,
@@ -46,7 +47,8 @@ export default function PodcastCategories({title, item, navigation}) {
             borderRadius: 5,
             backgroundColor: 'gray',
           }}
-        />
+        />*/}
+        <ImageWithLoad url={item.image} />
       </TouchableOpacity>
     );
   };

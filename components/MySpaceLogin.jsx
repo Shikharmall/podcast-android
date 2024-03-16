@@ -2,8 +2,14 @@ import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import React, {Component} from 'react';
 import {Path, Svg} from 'react-native-svg';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
-export default function MySpaceLogin({navigation}) {
+export default function MySpaceLogin(
+  {
+    /*navigation*/
+  },
+) {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -96,7 +102,8 @@ export default function MySpaceLogin({navigation}) {
               overflow: 'hidden', // Ensures the gradient doesn't overflow the TouchableOpacity boundaries
             }}
             onPress={() => {
-              navigation.navigate('Login');
+              //navigation.navigate('Login');
+              navigation.push('Login');
             }}>
             <LinearGradient
               colors={['#0a55d4', '#174696']} // Specify your two color shades here
